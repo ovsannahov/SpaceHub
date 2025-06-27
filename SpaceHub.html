@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpaceHub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin:0;
+      font-family:'Poppins',sans-serif;
+      background:#0e0e0e;
+      color:#fff;
+      line-height:1.6;
+    }
+    header {
+      padding:0px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      border-bottom:2px solid #a48dfc;
+      background:#1a1a1a;
+    }
+    .site-header {
+  background: #1b1b2f;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.header-inner {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+	padding: 0px;
+  height: 100px;
+}
+
+.btn-insta {
+  background: #b993fe;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-insta:hover {
+  background: #a17bd9;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  background: linear-gradient(135deg, #2a2042, #1b1b2f);
+  color: #fff;
+  padding: 120px 20px 160px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.hero-content {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+/* Highlights */
+.highlights {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 40px 0;
+}
+
+.highlights div {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background: #b993fe;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #a17bd9;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid #b993fe;
+  color: #b993fe;
+}
+
+.btn-outline:hover {
+  background: #b993fe;
+  color: #fff;
+}
+
+/* Decorative circles */
+.decor-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: float 10s infinite ease-in-out;
+  z-index: 1;
+}
+
+.circle1 {
+  width: 200px;
+  height: 200px;
+  background: #b993fe;
+  top: 20%;
+  left: 10%;
+}
+
+.circle2 {
+  width: 300px;
+  height: 300px;
+  background: #6f4bbf;
+  bottom: 10%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.circle3 {
+  width: 150px;
+  height: 150px;
+  background: #b993fe;
+  top: 40%;
+  right: 30%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-30px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Fade-in animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s forwards;
+}
+
+.fade-in.delay-1 { animation-delay: 0.3s; }
+.fade-in.delay-2 { animation-delay: 0.6s; }
+.fade-in.delay-3 { animation-delay: 0.9s; }
+.fade-in.delay-4 { animation-delay: 1.2s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+    footer {
+      margin-top:60px;
+      padding:20px;
+      background:#1a1a1a;
+      text-align:center;
+      color:#999;
+      font-size:0.9rem;
+    }
+    
+    @media(max-width:768px){
+      h1{font-size:2rem;}
+    }
+    .about {
+  background: #1a1525;
+  padding: 80px 20px;
+  border-top: 2px solid #8ca6db;
+  border-bottom: 2px solid #8ca6db;
+}
+
+.about h2 {
+  font-size: 2.6rem;
+  color: #b993fe;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.about .intro {
+  font-size: 1.3rem;
+  color: #ccc;
+  text-align: center;
+  margin-bottom: 50px;
+}
+    .about-text {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-text img {
+  width: 500px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(185, 147, 254, 0.4);
+  transition: transform 0.4s ease;
+}
+.about-text img:hover {
+  transform: scale(1.05);
+}
+.about-text-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.about-text-content p {
+  background: rgba(255,255,255,0.03);
+  border-left: 4px solid #b993fe;
+  padding: 15px 20px;
+  border-radius: 8px;
+}
+.about-text-content p::before {
+  content: \"🌟 \";
+  color: #b993fe;
+  margin-right: 5px;
+}
+.about {
+  animation: fadeInUp 1s ease;
+}
+
+.steps {
+  background: #f5f5f5;
+  color: #222;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.steps h2 {
+  font-size: 2.6rem;
+  color: #6f4bbf;
+  margin-bottom: 10px;
+}
+
+.steps-intro {
+  font-size: 1.3rem;
+  margin-bottom: 50px;
+  color: #555;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto 40px auto;
+}
+
+.step-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(0,0,0,0.15);
+}
+
+.step-card img {
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.step-card h3 {
+  color: #6f4bbf;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.step-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.steps-button .btn.register {
+  background: linear-gradient(135deg, #6f4bbf, #8ca6db);
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1rem;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.steps-button .btn.register:hover {
+  opacity: 0.9;
+}
+
+
+
+.volunteering {
+  background: linear-gradient(135deg, #1a1a1a, #0e0e0e);
+  color: #fff;
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.volunteering-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.volunteering h2 {
+  font-size: 2.8rem;
+  color: #b993fe;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.volunteering-intro {
+  font-size: 1.3rem;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.volunteering-desc {
+  font-size: 1.1rem;
+  color: #ddd;
+  max-width: 700px;
+  margin: 0 auto 50px auto;
+}
+
+.volunteering-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.volunteering-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid #333;
+  padding: 30px 20px;
+  border-radius: 12px;
+  width: 280px;
+  font-size: 1rem;
+  color: #eee;
+  box-shadow: 0 0 20px rgba(185,147,254,0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1s forwards;
+}
+
+.volunteering-card:nth-child(1) { animation-delay: 0.2s; }
+.volunteering-card:nth-child(2) { animation-delay: 0.4s; }
+.volunteering-card:nth-child(3) { animation-delay: 0.6s; }
+
+.volunteering-card h3 {
+  margin:0;
+  color: #b993fe;
+}
+
+.volunteering-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(185,147,254,0.4);
+}
+
+.volunteering-note {
+  font-size: 1.2rem;
+  margin: 50px auto 30px auto;
+  color: #ccc;
+  max-width: 700px;
+}
+
+.volunteering-button .btn.volunteer {
+  background: linear-gradient(135deg, #b993fe, #8ca6db);
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.volunteering-button .btn.volunteer:hover {
+  opacity:0.9;
+}
+
+.volunteering-slogan {
+  margin-top: 40px;
+  font-size: 1.4rem;
+  color: #b993fe;
+}
+
+
+.gallery-carousel {
+  background: linear-gradient(135deg, #2a2042, #1b1b2f);
+  color: #fff;
+  padding: 100px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-content {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.gallery-carousel h2 {
+  font-size: 2.8rem;
+  color: #b993fe;
+  margin-bottom: 10px;
+}
+
+.gallery-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+.gallery-text {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 60px auto;
+  color: #ddd;
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-track img {
+  width: 300px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  margin: 0 10px;
+  object-fit: cover;
+  box-shadow: 0 0 15px rgba(185,147,254,0.3);
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(185,147,254,0.8);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.3s;
+}
+
+.carousel-btn:hover {
+  background: rgba(185,147,254,1);
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+.support-contacts {
+  background: #f5f5f5;
+  color: #222;
+  padding: 80px 20px;
+}
+
+.support-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.support-text {
+  flex: 1 1 500px;
+}
+
+.support-text h2 {
+  font-size: 2.4rem;
+  color: #6f4bbf;
+  margin-bottom: 20px;
+}
+
+.support-text p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.support-text ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.support-text ul li {
+  background: rgba(185,147,254,0.1);
+  border-left: 4px solid #b993fe;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.support-text a {
+  color: #6f4bbf;
+  text-decoration: underline;
+}
+
+.support-contacts-block {
+  flex: 0 1 300px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  align-self: flex-start;
+}
+
+.support-contacts-block h3 {
+  margin-top: 0;
+  color: #6f4bbf;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+.support-contacts-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.support-contacts-block ul li {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.support-contacts-block ul li a {
+  color: #6f4bbf;
+  text-decoration: none;
+}
+
+.support-contacts-block ul li a:hover {
+  text-decoration: underline;
+}
+
+
+/* Анімація появи карток */
+@keyframes fadeUp {
+  to {
+    opacity:1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeZoom {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+  to {
+    opacity:1;
+    transform: translateY(0);
+  }
+
+
+    
+  </style>
+</head>
+<body>
+	<header class="site-header">
+		<div class="header-inner">
+		  <div class="logo">
+		    <img src="./img/logo-removebg-preview (3).png" alt="SpaceHub Logo">
+		  </div>
+		  <a class="btn btn-insta" href="https://www.instagram.com/_space.hub/" target="_blank">Instagram</a>
+		</div>
+	      </header>
+	      
+	      <main class="hero-section">
+		<div class="hero-content">
+		  <h1 class="fade-in">SpaceHub – це волонтерська організація, що прагне зробити якісну освіту доступною для всіх.</h1>
+		  <p class="fade-in delay-1">Ми допомагаємо учням покращувати знання з різних шкільних предметів та розвивати навички, необхідні для успішного майбутнього.</p>
+		  <p class="fade-in delay-2"><img src="./img/free-icon-pin-2377874.png" alt="" style="height: 20px; width: 20px;"> Онлайн. Безкоштовно. Зі щирістю.</p>
+		  <div class="highlights fade-in delay-3">
+		    <div>Освіта — наш інструмент надії.</div>
+		    <div>Спільнота — наш захист.</div>
+		    <div>Ти — наша мотивація.</div>
+		  </div>
+		  <div class="buttons fade-in delay-4">
+		    <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSeUlPR0-EEKTEmazt-DxLh8WH7HssC5YJ6UHEZaYFnAlheGQw/closedform">Хочу вчитися</a>
+		    <a class="btn btn-outline" href="https://tr.ee/_19waKfQE3">Хочу бути волонтером</a>
+		  </div>
+		</div>
+		<!-- Декоративні анімовані кола -->
+		<div class="decor-circle circle1"></div>
+		<div class="decor-circle circle2"></div>
+		<div class="decor-circle circle3"></div>
+	      </main>
+  <section class="about">
+	<h2>Хто ми такі</h2>
+	<p class="intro">Ми — простір, де підтримують, чують і надихають</p>
+	<div class="about-text">
+		<img src="./img/IMAGE_2025-06-26_22_57_09-removebg-preview.png" alt="">
+		<div class="about-text-content">
+		  <p>Space Hub народився з потреби. Потреби дати учням шанс. Потреби не залишати молодь наодинці з труднощами. Ми починали як маленька ініціатива волонтерів, а перетворилися на спільноту, яка щодня охоплює десятки учнів по всій Україні.</p>
+		  <p>Ми працюємо онлайн, щоб дістатися до тих, кому найважче. Наші ментори — це люди з різних куточків світу, які безкоштовно діляться своїми знаннями та часом.</p>
+		  <p>Наша мета — не просто навчати, а будувати впевненість, надихати та підтримувати.</p>
+		</div>
+	      </div>
+      </section>
+      <section class="steps">
+	<h2>Навчання з SpaceHub</h2>
+	<p class="steps-intro">Як стати учнем у SpaceHub?</p>
+	<div class="steps-grid">
+	  <div class="step-card">
+	    <img src="./img/icon-apply.png" alt="">
+	    <h3>Подача заявки</h3>
+	    <p>Коли відкрито набір, ти можеш обрати до трьох репетиторів з різних предметів. Просто заповни анкету та надішли нам.</p>
+	  </div>
+	  <div class="step-card">
+	    <img src="./img/icon-review.png" alt="">
+	    <h3>Опрацювання заявки</h3>
+	    <p>Заявка обробляється до 1,5 тижня. Менеджер зв’яжеться з тобою, щоб уточнити інформацію.</p>
+	  </div>
+	  <div class="step-card">
+	    <img src="./img/icon-match.png" alt="">
+	    <h3>Підбір репетитора</h3>
+	    <p>Після підтвердження даних ми починаємо пошук відповідного волонтера. Як тільки його буде знайдено — отримаєш сповіщення та контакт.</p>
+	  </div>
+	</div>
+	<div class="steps-button">
+	  <a class="btn register" href="https://docs.google.com/forms/d/e/1FAIpQLSeUlPR0-EEKTEmazt-DxLh8WH7HssC5YJ6UHEZaYFnAlheGQw/closedform">Перейти до форми реєстрації (учень)</a>
+	</div>
+      </section>
+      <section class="volunteering">
+	<div class="volunteering-container">
+	  <h2>Волонтерство</h2>
+	  <p class="volunteering-intro">Хто такий репетитор-волонтер у SpaceHub?</p>
+	  <p class="volunteering-desc">
+	    Репетитор-волонтер — це людина, яка ділиться знаннями безкоштовно, допомагає учням покращити розуміння предметів та підтримує їх у навчанні.
+	  </p>
+	  <div class="volunteering-cards">
+	    <div class="volunteering-card">
+	      <h3>Вік від 14 років</h3>
+	    </div>
+	    <div class="volunteering-card">
+	      <h3>Впевнені знання у вибраних предметах</h3>
+	    </div>
+	    <div class="volunteering-card">
+	      <h3>Готовність приділяти час та бути частиною команди</h3>
+	    </div>
+	  </div>
+	  <p class="volunteering-note">
+	    Це гнучка, надихаюча діяльність, яка приносить реальні зміни.
+	  </p>
+	  <div class="volunteering-button">
+	    <a class="btn volunteer" href="https://linktr.ee/SpaceHub_?fbclid=PAZXh0bgNhZW0CMTEAAacMnCiKKZuZ1dPT51QOEweiUw16RI_5XdcYzHXOmmoCSrDDcL3hc7HkJaEJeQ_aem_DL5mhrleq9LWXE9eYDY5aQ"> Перейти до форми реєстрації (волонтер)</a>
+	  </div>
+	  <p class="volunteering-slogan">Твої знання можуть змінити чиєсь життя.</p>
+	</div>
+      </section>
+      <section class="gallery-carousel">
+	<div class="carousel-content">
+	  <h2>Наші моменти</h2>
+	  <p class="gallery-subtitle">Живий простір, справжні емоції</p>
+	  <p class="gallery-text">
+	    Ми не просто навчаємо — ми будуємо спільноту, що надихає.<br>
+	    За кожним нашим курсом, вебінаром чи проєктом — щирі обличчя, підтримка та бажання змінюватися.
+	  </p>
+	  <div class="carousel-container">
+	    <button class="carousel-btn prev">&#10094;</button>
+	    <div class="carousel-track">
+	      <img src="./img/photo1.jpg" alt="moment 1">
+	      <img src="./img/photo2.jpg" alt="moment 2">
+	      <img src="./img/photo3.jpg" alt="moment 3">
+	      <img src="./img/photo4.jpg" alt="moment 4">
+	      <img src="./img/photo5.jpg" alt="moment 5">
+	      <img src="./img/photo6.jpg" alt="moment 6">
+	      <img src="./img/photo7.jpg" alt="moment 7">
+	    </div>
+	    <button class="carousel-btn next">&#10095;</button>
+	  </div>
+	</div>
+      </section>
+      <section class="support-contacts">
+	<div class="support-container">
+	  <div class="support-text">
+	    <h2>Підтримка SpaceHub</h2>
+	    <p>
+	      Завдяки вашій допомозі ми можемо робити більше для дітей та молоді.
+	    </p>
+	    <ul>
+	      <li>Проводити онлайн-заняття та вебінари для учнів з різних куточків України</li>
+	      <li>Створювати інтерактивні навчальні матеріали та ресурси</li>
+	      <li>Надавати менторську підтримку дітям і молоді, яким це найбільше потрібно</li>
+	      <li>Розвивати нові освітні програми та проєкти</li>
+	    </ul>
+	    <p>
+	      Кожен ваш внесок допомагає нам будувати простір, у якому знання, підтримка та людяність стають доступними кожному.
+	    </p>
+	    <p>
+	      Навіть невелика допомога створює великі зміни й відкриває нові можливості.
+	    </p>
+	    <p>
+	      📬 Якщо ви хочете підтримати нас — напишіть на <a href="mailto:01space.hub@gmail.com">01space.hub@gmail.com</a>.
+	    </p>
+	  </div>
+	  <div class="support-contacts-block">
+	    <h3>Контакти</h3>
+	    <ul>
+	      <li>📍 Instagram: <a href="https://instagram.com/_space.hub" target="_blank">@space.hub</a></li>
+	      <li>📩 Пошта: <a href="mailto:01space.hub@gmail.com">01space.hub@gmail.com</a></li>
+	      <li>📱 Telegram (менеджер): <a href="https://t.me/SpaceHub_manager" target="_blank">@SpaceHub_manager</a></li>
+	    </ul>
+	  </div>
+	</div>
+      </section>
+      
+  <footer>
+    © 2025 SpaceHub. Всі права захищені.
+  </footer>
+  <script>
+	const track = document.querySelector('.carousel-track');
+	const prevBtn = document.querySelector('.carousel-btn.prev');
+	const nextBtn = document.querySelector('.carousel-btn.next');
+	const slides = Array.from(track.children);
+	const slideWidth = slides[0].getBoundingClientRect().width + 20; // +margin
+	let index = 0;
+      
+	function updateCarousel() {
+	  track.style.transform = `translateX(-${index * slideWidth}px)`;
+	}
+      
+	nextBtn.addEventListener('click', () => {
+	  index = (index + 1) % slides.length;
+	  updateCarousel();
+	});
+      
+	prevBtn.addEventListener('click', () => {
+	  index = (index - 1 + slides.length) % slides.length;
+	  updateCarousel();
+	});
+      </script>
+</body>
+</html>
